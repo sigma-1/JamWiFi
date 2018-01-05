@@ -5,7 +5,7 @@ script:
 - cd $TRAVIS_BUILD_DIR
 - ls
 - mkdir build
-- xcodebuild -project MyProject.xcodeproj -alltargets -configuration Release
+- xcodebuild -project JamWiFi.xcodeproj -alltargets -configuration Release
 - ls
 deploy:
   provider: releases
