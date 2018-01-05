@@ -3,8 +3,6 @@ os: osx
 osx_image: xcode8.3
 script:
 - cd $TRAVIS_BUILD_DIR
-- ls
-- mkdir build
 - xcodebuild -project JamWiFi.xcodeproj -alltargets -configuration Release
 - ls
 deploy:
