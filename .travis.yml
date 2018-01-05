@@ -4,13 +4,13 @@ osx_image: xcode8.3
 script:
 - cd $TRAVIS_BUILD_DIR
 - xcodebuild -project JamWiFi.xcodeproj -alltargets -configuration Release
+- zip -r archive.zip ./build
 - ls
 deploy:
   provider: releases
   api_key:
     secure: O2t9SJpf4OQa9ycMsYy2IjKwfAPZ8mBgUbTU+mIDUcTMRKpY9P4LVrInnQFXhp87sOHNs3WtFcHDeAjxy1a/jXVSqBaZSGAZfztKoFMIHuQrNney0juhOt8VCvfN8xIiQh6A7tJAEWYgnp2HLIESdKc1w+YhKcxxeF/CKHD1pfRmdvzdaMIEPS8w1PqDPXT/lU2LJEHWmzLqd3rXayzqED4xuoasd4yv2y9mYHTfibAO9GtQGbvJhNpzk7Tcra6jFtJhHOF+3tVa/kb8eAXBvxqLgGh8Jm/9M07bZlnDd5DRNbPM0XMZSyOCqijIlTwvunj99EsF9FseFFNiTMlGCuftE/aShhkJzFKYNcvlFoPhpIvLzbfT4eKpNnvPjgnCKRaj+S67FGCPH88qZMMo6vO6culdhj/ImflMjnmvAgBrgNvfa2ih9ABsQ0jn30c+EuxOC2RKjngx6lkIClGUskFDQYFgIIdY9aDVBI/ou7w16zsP6qtEMEFeSmtOfvP4ew1Yczy1/18eCxqTmjLt7GbQ/icpAL91PziJhcHOOtwOrYBpSeofQ4FfYWXUtSgTJiSdK6yaTANnl0PNhmt39XvkofAZgR6H9xrm2/xvWgio8CxNTh8z5soFLQ1/5E/oNK/048+ydI5xSx0bcSFqnMyOFaJwYDDEse9LnRzoHrs=
-  file_glob: true
-  file: $TRAVIS_BUILD_DIR/build
+  file: $TRAVIS_BUILD_DIR/archive.zip
   skip_cleanup: true
   on:
     repo: tcode2k16/JamWiFi
